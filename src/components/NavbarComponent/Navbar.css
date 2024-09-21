@@ -1,0 +1,20 @@
+.Navbar{
+  background-color: #333e54;
+  height: 60px;
+  display: flex;
+  padding: 20px;
+  color: #060606;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.LogoutButton{
+  background-color: #ffffff;
+  border-radius:  70px;
+  height: 40px;
+  margin-left: 20px;
+  
+}
+

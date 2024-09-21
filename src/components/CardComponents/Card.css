@@ -1,0 +1,41 @@
+.activity-card {
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+
+.activity-details{
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.activity-date{
+  align-self: flex-start;
+  margin-bottom: 40px;
+}
+
+.activity-status{
+  align-self: flex-end;
+}
+
+.see-more-button{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 80px;
+  cursor: pointer;
+  
+}
