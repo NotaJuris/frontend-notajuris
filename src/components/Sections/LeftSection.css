@@ -1,5 +1,6 @@
 .main{
   height: 100vh; /* Para que a altura ocupe 100% da viewport */
+  
 }
 
 .left-section{
@@ -10,6 +11,7 @@
   justify-content: center;
   height: 100vh;
   background-color: white;
+  
 
 }
 
@@ -24,8 +26,10 @@
   width: 65px;
   text-align: center;
   border-radius:50px;
+  border: thin solid;
+  font-weight: 100;
   font-size: 50px;
-  background: none;
+  background: transparent;
   cursor: pointer;
   
 }
@@ -37,16 +41,18 @@
 
 .right-section{ 
   display: flex;
+  /* 
   margin-left: auto;
   margin-top: auto;
+   */
   height: 100vh;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
   background-color: #333e54;
   padding: 30px;
-  overflow-y: auto;
-  
+  overflow-y: hidden;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .container{
   display: flex;
@@ -58,6 +64,7 @@
 .card-container{
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 

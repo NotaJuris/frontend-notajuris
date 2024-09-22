@@ -1,8 +1,8 @@
 function StudentScreen() {
   return (
     <div>
+      
     </div>      
-
   );
 }
 

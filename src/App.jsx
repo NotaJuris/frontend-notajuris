@@ -3,7 +3,8 @@ import './App.css';
 import StudentScreen from './screens/StudentScreen'; 
 import Navbar from './components/NavbarComponent/Navbar';
 import LeftSection from './components/Sections/LeftSection';
-import Card from './components/CardComponents/Card';
+/*Retirei a importação do Card, pois ele já está incluso na Section */ 
+
 
 
 function App() {

@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .activity-info {
@@ -34,8 +35,14 @@
 .see-more-button{
   display: flex;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: thin solid;
   width: 80px;
   cursor: pointer;
+  box-shadow: inset;
+  size: 10cap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 6px;
+  background-color: white;
   
 }
