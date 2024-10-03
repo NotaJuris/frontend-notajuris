@@ -1,6 +1,39 @@
+@media (max-width: 768px) { 
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Navbar{
+    position: fixed; /* Corrige sobreposição */
+    top: 0; /* Fica fixo no topo */
+    left: 0;
+    right: 0;
+  }
+  
+  .container{
+    flex-direction: column-reverse;
+    position: relative;
+    
+  }
+
+  .see-more-button{
+    margin-top: 30px; 
+  }
+  
+  .left-section, .right-section{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+
+  } 
+
 .main{
   height: 100vh; /* Para que a altura ocupe 100% da viewport */
-  
+ 
 }
 
 .left-section{
@@ -34,6 +67,12 @@
   
 }
 
+.new-activity-button:active{
+  background-color:#333e54;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .activity-text{
   font-size:24;
   margin-bottom:10px;
@@ -41,17 +80,20 @@
 
 .right-section{ 
   display: flex;
+    
   /* 
   margin-left: auto;
   margin-top: auto;
    */
+
   height: 100vh;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
   background-color: #333e54;
   padding: 30px;
-  overflow-y: hidden;  
+  overflow-y: scroll;  
+  scrollbar-width: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .container{

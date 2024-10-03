@@ -2,7 +2,7 @@
 import './App.css';
 import StudentScreen from './screens/StudentScreen'; 
 import Navbar from './components/NavbarComponent/Navbar';
-import LeftSection from './components/Sections/LeftSection';
+import Section from './components/Sections/Sections';
 /*Retirei a importação do Card, pois ele já está incluso na Section */ 
 
 
@@ -12,8 +12,7 @@ function App() {
     <div className="App">
       <Navbar name="Felipe"/> 
       <StudentScreen />
-      <LeftSection/>
-      
+      <Section/>
     </div>
   );
 }

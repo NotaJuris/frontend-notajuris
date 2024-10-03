@@ -1,7 +1,7 @@
-import './LeftSection.css'
+import './Sections.css'
 import Card from '../CardComponents/Card'; 
 
-function LeftSection() {
+function Sections() {
   return (
     <main className= "container">
       <section className="left-section">
@@ -20,10 +20,15 @@ function LeftSection() {
           <Card title="Audiência" date="20/10/2025" status="Pendente"/>
           <Card title="Audiência" date="24/12/2025" status="Recebida"/>
           <Card title="Audiência" date="20/10/2025" status="Pendente"/>
+          <Card title="Audiência" date="20/10/2025" status="Pendente"/>
+          <Card title="Audiência" date="20/10/2025" status="Pendente"/>
+          <Card title="Audiência" date="20/10/2025" status="Pendente"/>
+          <Card title="Audiência" date="20/10/2025" status="Pendente"/>
+          <Card title="Audiência" date="20/10/2025" status="Pendente"/>
         </div>
       </section>
     </main>
   );
 }
 
-export default LeftSection;
+export default Sections;
