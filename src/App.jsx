@@ -1,8 +1,9 @@
 
 import './App.css';
 import StudentScreen from './screens/StudentScreen'; 
-import Navbar from './components/NavbarComponent/Navbar';
-import Section from './components/Sections/Sections';
+import Navbar from './components/StudentComponents/NavbarComponent/Navbar';
+import Section from './components/StudentComponents/Sections/Sections';
+
 /*Retirei a importação do Card, pois ele já está incluso na Section */ 
 
 

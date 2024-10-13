@@ -2,18 +2,20 @@
   *{
     margin: 0;
     padding: 0;
+    
   }
-  
-  .Navbar{
-    position: fixed; /* Corrige sobreposição */
-    top: 0; /* Fica fixo no topo */
-    left: 0;
-    right: 0;
+
+  body, html {
+    overflow-x: hidden;
+    height: 100%;
+    
   }
-  
+   
   .container{
     flex-direction: column-reverse;
     position: relative;
+    padding-top: 0px;
+    padding-bottom: 80px;
     
   }
 
@@ -21,15 +23,45 @@
     margin-top: 30px; 
   }
   
-  .left-section, .right-section{
-    width: 100%;
-    max-width: 100%;
-    position: relative;
-    margin-bottom: 20px;
+  .left-section{
+    width: 100vh;
+    position:sticky;
+    bottom: 0px;
+    z-index: 1;
   }
 
+  .right-section{
+    height: auto;
+    overflow-y: auto;
+
+  }
+
+  .card-container{
+    height: auto;
+    overflow-y: auto;
+  }
+
+  /*.left-section, .right-section{
+    width: 100%;
+    max-width: 100%;
+    position: relative; 
+    margin-bottom: 20px;
+  
+  } */
 
   } 
+
+
+
+/* 
+######################################################
+
+Aqui acaba o @media 
+
+######################################################
+*/
+
+
 
 .main{
   height: 100vh; /* Para que a altura ocupe 100% da viewport */
@@ -55,6 +87,11 @@
     font-size: 24px; 
  
 }
+
+/* .plus-icon{
+  width: 35px;
+} */
+
 .new-activity-button{
   width: 65px;
   text-align: center;
@@ -68,7 +105,6 @@
 }
 
 .new-activity-button:active{
-  background-color:#333e54;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -86,13 +122,13 @@
   margin-top: auto;
    */
 
-  height: 100vh;
+  max-height: 100%;
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
   background-color: #333e54;
   padding: 30px;
-  overflow-y: scroll;  
+  overflow-y: auto;  
   scrollbar-width: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -104,9 +140,12 @@
 }
 
 .card-container{
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
+  max-height: 100vh;
+ 
 }
 
 

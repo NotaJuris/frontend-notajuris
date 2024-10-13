@@ -1,5 +1,7 @@
 import './Sections.css'
 import Card from '../CardComponents/Card'; 
+/* import plus from '../../../assets/images/plus.svg'; */
+
 
 function Sections() {
   return (
@@ -7,7 +9,7 @@ function Sections() {
       <section className="left-section">
       <div className= "button-container">
       <span className= "activity-text">Enviar nova atividade</span>
-      <button className="new-activity-button">+</button>
+      <button className="new-activity-button"> {/*<img src={plus} alt="Plus" className="plus-icon"/> */} + </button>
       </div>
       </section>
 

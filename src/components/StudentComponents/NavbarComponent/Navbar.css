@@ -1,0 +1,118 @@
+@media (max-width: 768px) {
+  .Navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    flex-direction: column; 
+    align-items: center; 
+    overflow: hidden;
+    
+  }
+
+  .Navbar .NavbarRight{
+    font-size: 12px;
+  }
+
+  .Navbar .NotificationBell{
+    font-size: 12px;
+    margin-right: 15px;
+  }
+
+  .Navbar .LogoutButton {
+    font-size: 12px;
+    margin-left: 0; /* Remove o espaçamento da versão desktop */
+  }
+
+
+}
+
+
+h3{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.Navbar{
+  background-color: #333e54;
+  height: 60px;
+  display: flex;
+  padding: 20px;
+  color: #060606;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* era relative */
+  top: 0; /* Mantém a navbar no topo */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.NavbarLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #ecf0f1;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.NavbarRight{
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.NavbarLogo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+
+}
+.NotificationBell{
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ecf0f1;
+  
+  height: 35px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 27px;
+}
+
+.LogoutButton{
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ecf0f1;
+  height: 35px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 27px;
+}
+
+.NotificationIcon{
+  width: 17px;
+  height: auto;
+  
+}
+.NotificationIcon:hover{
+  color: #FFD426
+}
+
+.LogoutIcon{
+  margin-left: 5px; /* Espaço entre o texto e o ícone */
+  width: 17px; /* Ajuste a largura do ícone conforme necessário */
+  height: auto; /* Mantém a proporção do ícone */
+}
