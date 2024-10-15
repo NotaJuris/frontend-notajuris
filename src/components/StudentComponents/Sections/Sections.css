@@ -16,7 +16,8 @@
     position: relative;
     padding-top: 0px;
     padding-bottom: 80px;
-    
+    max-width: 100%;
+    width: 100%;
   }
 
   .see-more-button{
@@ -33,12 +34,19 @@
   .right-section{
     height: auto;
     overflow-y: auto;
+    scrollbar-width: none;
+    max-height: 100vh;
 
   }
 
   .card-container{
     height: auto;
     overflow-y: auto;
+    align-items: center;
+    margin: 0; /* Ou ajuste conforme necessário */
+    padding: 0; /* Ajuste conforme necessário */
+    width: 100vw; /* Para ocupar toda a largura */
+    
   }
 
   /*.left-section, .right-section{
@@ -121,7 +129,7 @@ Aqui acaba o @media
   margin-left: auto;
   margin-top: auto;
    */
-
+  
   max-height: 100%;
   align-items: center;
   flex-direction: column;
@@ -137,6 +145,10 @@ Aqui acaba o @media
   height: 100vh;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 100%; /* Isso garante que não haverá limite de largura */
+  padding: 0; /* Remova padding se houver */
+  margin: 0; /* Remova margens se houver */
 }
 
 .card-container{
