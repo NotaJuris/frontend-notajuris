@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #333e54;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0 15px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.logout-link, .alunos-link, .atividades-link {
+    color: #bccdd1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-link:hover, .alunos-link:hover, .atividades-link:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.welcome-message {
+    margin-right: 20px;
+    color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar-left, .navbar-right {
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+
+    .navbar-right {
+        justify-content: flex-end;
+    }
+        
+    .welcome-message {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-left {
+        font-size: 1.2rem;
+    }
+
+    .menu-icon {
+        font-size: 28px;
+    }
+
+    .logout-link, .alunos-link, .atividades-link {
+        font-size: 0.8rem;
+    }
+}
