@@ -21,16 +21,27 @@ const LoginScreen = () => {
         matricula: loginNumber.toString(),
         senha: password
       });
-    
-      const headers = { 'Authorization': `Bearer ${response.data.token}` };
-      axios.post('https://backend-notajuris-production.up.railway.app/v1/usuarios/me', { headers })
-    .then(response => console.log(response.data));
 
-      console.log(response.data.token)
+      //Aqui eu estou pegando o token que a API retorna
+      const token = response.data.token;
+      
+      //Colocando o token no cabeçalho da requisição
+      const headers = { 'Authorization': `Bearer ${token}` };
+      
+      //Aqui agora eu estou fazendo a requisição pra pegar as informações do usuário
+      const userResponse = await axios.get('https://backend-notajuris-production.up.railway.app/v1/usuarios/me', {
+        headers: headers
+      });
+
+      //Aqui as informações do usuário
+      const userInfo = userResponse.data;
+
+      console.log("Dados do usuário: ", userInfo);
+
 
       if (response.status === 200) {
         console.log('Login realizado:', response.data);
-        navigate('/homep'); 
+        navigate('/TeacherScreen'); 
       } else {
         setErrorMessage(response.data.message || 'Erro ao efetuar o login.');
       }
