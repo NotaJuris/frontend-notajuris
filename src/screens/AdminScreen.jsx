@@ -1,9 +1,9 @@
-function AdminScreen(){
-  return(
+function AdminScreen() {
+  return (
     <div>
-
-    </div>
+      <h1>Ola mundo</h1>
+    </div>      
   );
 }
 
-export default AdminScreen()
+export default AdminScreen;

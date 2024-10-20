@@ -33,18 +33,19 @@ const LoginScreen = () => {
         headers: headers
       });
 
-      //Aqui as informações do usuário
+      //Aqui para exibir as informações do usuário
       const userInfo = userResponse.data;
 
       console.log("Dados do usuário: ", userInfo);
 
-
-      if (response.status === 200) {
-        console.log('Login realizado:', response.data);
-        navigate('/TeacherScreen'); 
-      } else {
-        setErrorMessage(response.data.message || 'Erro ao efetuar o login.');
+      if (userInfo.cargo === 'Professor') {
+        navigate('/TeacherScreen');
+      } else if (userInfo.cargo === 'Aluno') {
+        navigate('/StudentScreen');
+      } else if (userInfo.cargo === 'SUPERADMIN') {
+        navigate('/TeacherScreen');
       }
+
     } catch (error) {
       console.error('Erro: ', error);
       setErrorMessage('Erro ao se conectar com a API.');
