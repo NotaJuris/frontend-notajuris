@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiClipboardDocumentList, HiUserGroup, HiArrowLeftOnRectangle } from "react-icons/hi2";
 import logo_notajuris from '../../../assets/images/logo_notajuris.svg';
+import { Link } from 'react-router-dom';
 import './NavbarTeacher.css';
 
 const NavbarTeacher = () => {
@@ -13,12 +14,12 @@ const NavbarTeacher = () => {
 
             <div className="navbar_teacher-right">
                 <h4 className="welcome-message">Bem-Vindo Professor!</h4>
-                <a href="#" className='atividades-link'>
+                <Link to='/TeacherScreen' className='atividades-link'>
                     <HiClipboardDocumentList className="icon" /> Atividades
-                </a>
-                <a href="#" className='alunos-link'>
+                </Link>
+                <Link to='/TeacherStudentsScreen' className='alunos-link'>
                     <HiUserGroup className="icon" /> Alunos
-                </a>
+                </Link>
                 <a href="#" className='logout-link'>
                     <HiArrowLeftOnRectangle className="icon" /> Logout
                 </a>

@@ -7,6 +7,7 @@ const TeacherScreen = () => {
   return (
     <div className="teacher-screen">
       <NavbarTeacher />
+      
       <div className="h2-home">
         <h2>Atividades recebidas</h2>
       </div>

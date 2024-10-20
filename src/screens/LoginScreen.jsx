@@ -36,14 +36,15 @@ const LoginScreen = () => {
       //Aqui para exibir as informações do usuário
       const userInfo = userResponse.data;
 
-      console.log("Dados do usuário: ", userInfo);
 
-      if (userInfo.cargo === 'Professor') {
+      if (userInfo.cargo === 'ORIENTADOR') {
         navigate('/TeacherScreen');
-      } else if (userInfo.cargo === 'Aluno') {
+      } else if (userInfo.cargo === 'ALUNO') {
         navigate('/StudentScreen');
       } else if (userInfo.cargo === 'SUPERADMIN') {
         navigate('/TeacherScreen');
+      } else if (userInfo.cargo === 'ADMINISTRADOR') {
+        navigate('/AdminScreen');
       }
 
     } catch (error) {
@@ -53,7 +54,8 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-background">
+      <div className="login-container">
       <form onSubmit={handleSubmit}>
         <h1>Acesse o Sistema</h1>
         <div className="login-input-field">
@@ -83,7 +85,12 @@ const LoginScreen = () => {
 
         <button>Entrar</button>
       </form>
-    </div>
+    </div> 
+</div>
+
+
+      
+    
   );
 };
 
