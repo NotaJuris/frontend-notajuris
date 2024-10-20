@@ -124,16 +124,16 @@ Aqui acaba o @media
 
 .right-section{ 
   display: flex;
-    
+
   /* 
   margin-left: auto;
   margin-top: auto;
    */
-  
+  height: 100vh;
   max-height: 100%;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   background-color: #333e54;
   padding: 30px;
   overflow-y: auto;  
