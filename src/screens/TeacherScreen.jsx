@@ -14,27 +14,32 @@ const TeacherScreen = () => {
       <div className="cards-teacher-container">
         <CardsTeacherHome
           title='Atendimento Jurídico'
-          description='Lucas Calipson - 03341104'
+          fullName='Lucas Calipson'
+          registrationNumber='03341166'
           date='26/09/2024'
         />
         <CardsTeacherHome
           title='Audiência'
-          description='Felipe de Souza - 03342106'
+          fullName='Felipe de Souza'
+          registrationNumber='03667834'
           date='26/09/2024'
         />
         <CardsTeacherHome
           title='Mediação'
-          description='Natiane Santos - 04342107'
+          fullName='Natiane Santos'
+          registrationNumber='78563345'
           date='26/09/2024'
         />
         <CardsTeacherHome
           title='Atendimento Jurídico'
-          description='Camila Farias - 03341104'
+          fullName='Camila Farias'
+          registrationNumber='03446784'
           date='26/09/2024'
         />
         <CardsTeacherHome
           title='Audiência'
-          description='Joseferson Querino - 03357133'
+          fullName='Joseferson Querino'
+          registrationNumber='07856422'
           date='26/09/2024'
         />
 

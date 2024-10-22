@@ -14,12 +14,11 @@
     transition: transform 0.3s ease;
     word-wrap: break-word;
     box-sizing: border-box;
-
 }
 
-.cards-teacher-home:hover {
-    transform: scale(1.02);
-}
+
+
+
 
 .card-teacher-title {
     font-size: 1.3rem;
@@ -31,6 +30,10 @@
 .card-teacher-description {
     font-size: 0.9rem;
         
+}
+
+.card-teacher-registrationNumber{
+    font-size: 0.9rem;
 }
 
 .card-teacher-date {
@@ -58,6 +61,68 @@
 .card-teacher-button:hover {
     background-color: #444d66;
 }
+
+/* Estilo do modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+  
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.modal-content h3 {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.modal-content p {
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+.modal-button-container {
+    display: flex; /* Flexbox para alinhar os botões lado a lado */
+    justify-content: flex-end; /* Alinha os botões à direita */
+    margin-top: auto; /* Empurra os botões para a parte inferior */
+    gap: 10px; /* Adiciona espaço entre os botões */
+}
+  
+  .close-modal-button {
+    padding: 10px 15px;
+    background-color: #333e54;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+  
+  .close-modal-button:hover {
+    background-color: #444d66;
+}
+  
+
 
 @media (max-width: 768px) {
     .cards-teacher-home {
