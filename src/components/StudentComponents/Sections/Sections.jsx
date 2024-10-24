@@ -15,7 +15,7 @@ function Sections() {
 
       <section className= "right-section">
         <div className="card-container">
-          <h2 style={{ color: 'white' }}>Histórico de atividades</h2>
+          <h2 style={{ color: 'white'}}>Histórico de atividades</h2>
           <Card title="Atendimento jurídico" date="23/09/2024" status="Recebida" />
           <Card title="Audiência" date="12/04/2025" status="Pendente"/>
           <Card title="Reunião" date="30/07/2025" status="Concluída"/>
