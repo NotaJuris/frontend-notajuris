@@ -1,0 +1,63 @@
+.cards-teacher-students {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fff;
+    width: 100%; /* Ocupa toda a largura */
+    max-width: 1400px; /* Limite máximo de largura */
+    margin: 15px auto; /* Centraliza o card horizontalmente e adiciona espaço em cima/embaixo */
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 0.3s ease;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.cards-teacher-students:hover {
+    transform: scale(1.02);
+}
+
+.card-teacher-fullName {
+    margin-bottom: 10px;
+    color: #333;
+    
+
+}
+
+.card-teacher-birthDate {
+    margin: 5px 0;
+    color: #555;
+    
+}
+
+.card-teacher-registrationNumber {
+    margin: 5px 0;
+    color: #555;
+    
+}
+
+.card-teacher-email{
+    margin: 5px 0;
+    color: #555;
+    
+}
+
+.card-teacher-shift{
+    margin: 5px 0;
+    color: #555;
+    
+}
+
+.card-teacher-semester{
+    margin: 5px 0;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .card-student {
+        margin: 10px;
+        padding: 15px;
+    }
+}
