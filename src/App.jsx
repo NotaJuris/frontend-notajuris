@@ -1,22 +1,23 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React  from 'react';
 import './App.css';
+import LoginScreen from './screens/LoginScreen';
+import TeacherScreen from './screens/TeacherScreen';
+import AdminScreen from './screens/AdminScreen';
 import StudentScreen from './screens/StudentScreen';
-import Home from './screens/Home';
-/*Retirei a importação do Card, pois ele já está incluso na Section */ 
-
-
+import TeacherStudentsScreen from './screens/TeacherStudentsScreen';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-  <div className="App">
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/atividades" element={<StudentScreen />} />
+        <Route path="/" element={<LoginScreen />} />
+        <Route path="/AdminScreen" element={<AdminScreen />} />
+        <Route path="/StudentScreen" element={<StudentScreen />} />
+        <Route path="/TeacherScreen" element={<TeacherScreen />} />
+        <Route path="/TeacherStudentsScreen" element={<TeacherStudentsScreen />} />
       </Routes>
-    </BrowserRouter>  
-  </div>
+    </Router>
   );
 }
 

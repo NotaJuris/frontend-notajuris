@@ -1,9 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
 @media (max-width: 768px) { 
-  *{
-    margin: 0;
-    padding: 0;
-    
-  }
 
   body, html {
     overflow-x: hidden;
@@ -68,8 +68,6 @@ Aqui acaba o @media
 
 ######################################################
 */
-
-
 
 .main{
   height: 100vh; /* Para que a altura ocupe 100% da viewport */
@@ -145,7 +143,7 @@ Aqui acaba o @media
   height: 100vh;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   max-width: 100%; /* Isso garante que não haverá limite de largura */
   padding: 0; /* Remova padding se houver */
   margin: 0; /* Remova margens se houver */
@@ -155,9 +153,9 @@ Aqui acaba o @media
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: auto;
   max-height: 100vh;
- 
 }
 
 
