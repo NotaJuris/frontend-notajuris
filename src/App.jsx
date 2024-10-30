@@ -1,5 +1,6 @@
 import React  from 'react';
 import './App.css';
+import AdminReport from './screens/AdminReport';
 import LoginScreen from './screens/LoginScreen';
 import TeacherScreen from './screens/TeacherScreen';
 import AdminScreen from './screens/AdminScreen';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/StudentScreen" element={<StudentScreen />} />
         <Route path="/TeacherScreen" element={<TeacherScreen />} />
         <Route path="/TeacherStudentsScreen" element={<TeacherStudentsScreen />} />
+        <Route path="/AdminReport" element={<AdminReport/>} />
       </Routes>
     </Router>
   );
