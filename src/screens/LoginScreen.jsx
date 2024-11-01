@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import './LoginScreen.css';
-
+import logo_notajuris from '../assets/images/logo_notajuris_invert.svg'
 
 const LoginScreen = () => {
   const [loginNumber, setLoginNumber] = useState("");
@@ -57,7 +57,9 @@ const LoginScreen = () => {
     <div className="login-background">
       <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h1>Acesse o Sistema</h1>
+        <img src={logo_notajuris} alt="Logo NotaJuris" className="NavbarLogo" />
+        <h1>Seja bem-vindo!</h1>
+        <span className='welcome-subtitle'>Acesso ao sistema</span>
         <div className="login-input-field">
           <input 
             type="text" 
@@ -78,7 +80,7 @@ const LoginScreen = () => {
         </div>
 
         <div className="login-password-forget">
-          <a href="#">Esqueceu a senha?</a>
+          <a href="#">Esqueci minha senha</a>
         </div>
 
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}

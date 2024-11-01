@@ -1,5 +1,12 @@
 body {
-    background-color: #333e54;
+    background-color: #295264;
+    background-image: url(../assets/images/blue_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,34 +14,56 @@ body {
     margin: 0;
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Usa a mesma imagem */
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(2px); /* Intensidade do blur */
+    z-index: -1;
+}
 
 .login-container {
-    width: 500px;
+    min-width: 35vw;
+    min-height: 40vh;
     background-color: #fff;
     padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 35px;
+    box-shadow: 0 4px 20px #142433;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .login-container h1 {
-    font-size: 24px;
-    color: #000000;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 25px;
+    color: #142433;
+    margin-bottom: 0px;
+    font-weight: bolder;
+}
+
+.login-container .welcome-subtitle {
+    font-size: 20px;
+    color: #142433;
+    margin-bottom: 6px;
+    font-weight: normal;
 }
 
 .login-container .login-input-field {
     position: relative;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .login-input-field input {
     width: 100%;
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #000000;
-    font-size: 16px;
+    border-radius: 30px;
+    border: 2px solid #FAD9A6;
+    font-size: 15px;
     outline: none;
     box-sizing: border-box;
 }
@@ -44,7 +73,7 @@ body {
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    color: #000000;
+    color: #FAD9A6;
     font-size: 18px;
 }
 
@@ -53,10 +82,11 @@ body {
     justify-content: space-between;
     font-size: 14px;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .login-password-forget a {
-    color: #333e54;
+    color: #142433;
     text-decoration: none;
 }
 
@@ -65,9 +95,9 @@ body {
 }
 
 .login-container button {
-    width: 50%;
+    width: 70%;
     padding: 12px 0;
-    background-color: #333e54;
+    background-color: #142433;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -78,5 +108,5 @@ body {
 }
 
 .login-container button:hover {
-    background-color: #444d6e;
+    background-color: #295264;
 }
