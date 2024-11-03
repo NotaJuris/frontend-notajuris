@@ -26,22 +26,27 @@
     margin-left: 0; /* Remove o espaçamento da versão desktop */
   }
 
-
 }
 
+
+html,body
+{
+  font-family: 'Poppins', sans-serif;
+}
 
 h3{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 10px;
+
 }
 
 .Navbar{
   background-color: #132433;
   height: 80px;
   display: flex;
-  padding: 20px;
+  padding: 8px;
   color: #060606;
   justify-content: space-between;
   align-items: center;
@@ -51,6 +56,7 @@ h3{
   right: 0;
   z-index: 10;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
 }
 
 .NavbarLeft {
@@ -86,6 +92,7 @@ h3{
   cursor: pointer;
   padding: 0;
   margin-left: 27px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .LogoutButton{
@@ -100,6 +107,7 @@ h3{
   cursor: pointer;
   padding: 0;
   margin-left: 27px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .NotificationIcon{

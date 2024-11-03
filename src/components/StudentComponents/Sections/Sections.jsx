@@ -5,7 +5,7 @@ import Card from '../CardComponents/Card';
 
 function Sections() {
   return (
-    <main className= "container">
+    <main className= "sections container"> 
       <section className="left-section">
       <div className= "button-container">
       <span className= "activity-text">Enviar nova atividade</span>

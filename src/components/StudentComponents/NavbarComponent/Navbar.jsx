@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.css';
-import logo_notajuris from '../../../assets/images/logo_notajuris.svg';
+import logo_neojurix from '../../../assets/images/logo_neojurix.svg';
 import bell from '../../../assets/images/bell.svg';
 import logout from '../../../assets/images/logout.svg';
 
@@ -9,7 +9,7 @@ function Navbar(props) {
   return (
     <nav className="Navbar">
       <div className="NavbarLeft">
-        <img src={logo_notajuris} alt="Logo NotaJuris" className="NavbarLogo" />
+        <img src={logo_neojurix} alt="Logo NotaJuris" className="NavbarLogo" />
         <h1>NeoJurix</h1>
       </div>
       <div className="NavbarRight">
