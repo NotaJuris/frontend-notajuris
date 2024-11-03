@@ -87,10 +87,6 @@ const LoginScreen = () => {
       </form>
     </div> 
 </div>
-
-
-      
-    
   );
 };
 

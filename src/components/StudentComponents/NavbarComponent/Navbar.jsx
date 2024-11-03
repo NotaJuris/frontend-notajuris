@@ -10,7 +10,7 @@ function Navbar(props) {
     <nav className="Navbar">
       <div className="NavbarLeft">
         <img src={logo_notajuris} alt="Logo NotaJuris" className="NavbarLogo" />
-        <h1>NotaJuris</h1>
+        <h1>NeoJurix</h1>
       </div>
       <div className="NavbarRight">
         <h3 style={{ color: 'white' }}>Bem-vindo, {props.name}! 
