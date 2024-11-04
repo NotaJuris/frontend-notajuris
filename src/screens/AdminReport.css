@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+button {
+    border: none;
+    background: none;
+    background-color: #142433;
+    color: white;
+    border-radius: 25px;
+    width: 250px;
+    height: 45px;
+}
+
+.teacher-screen {
+    background-image: url('/src/assets/images/blue_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 50px;
+}
+
+.content-teacher-dashboard {
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1500px;
+    height: 80vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-home {
+    gap: 50px;
+    display: flex;
+    padding: 15px;
+    margin: 10px;
+    align-items: center;
+
+}
+
+.h2-home h2 {
+    font-size: 1.9rem;
+    margin: 0;
+}
+
+.divider {
+    border: none; /* Remove bordas padrão */
+    height: 3px; /* Altura da linha */
+    background-color: #142433; /* Cor da linha */
+    margin: 0; /* Remove margens para alinhar perfeitamente */
+    width: 100%; /* Largura total do container */
+    margin-bottom: 10px;
+}

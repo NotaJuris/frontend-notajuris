@@ -1,18 +1,110 @@
 body {
-    
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 .teacher-screen {
-    padding-top: 100px;
-    background-color: #f6f7f8;
+    background-image: url('/src/assets/images/blue_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.content-teacher-dashboard {
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1500px;
+    height: 80vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.cards-teacher-container {
+    flex: 1;
+    max-height: calc(80vh - 100px);
+    max-width: 100%; 
+    overflow-y: auto; 
+    border-radius: 8px; 
+    padding: 20px;
+    box-sizing: border-box; 
 }
 
 .h2-home {
-    font-size: 1.2rem;
-    padding: 10px;
-    padding-left : 50px;
-    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px;
+    align-items: center;
+
 }
+
+.h2-home h2 {
+    font-size: 1.9rem;
+    margin: 0;
+}
+
+.search-bar-container {
+    position: relative; /* Necessário para posicionar o ícone corretamente */
+}
+
+.search-icon {
+    position: absolute; /* Permite que o ícone fique sobre a barra de pesquisa */
+    left: 15px; /* Alinhamento à esquerda dentro da barra */
+    top: 50%; /* Alinhamento vertical ao centro */
+    transform: translateY(-50%); /* Centraliza o ícone verticalmente */
+    color: rgb(227, 204, 26); /* Cor do ícone */
+}
+
+.search-bar {
+    padding: 10px 40px; /* Espaçamento interno, com espaço para o ícone */
+    border: 2px solid rgb(227, 204, 26);
+    border-radius: 40px;
+    width: 500px;
+    height: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.divider {
+    border: none; /* Remove bordas padrão */
+    height: 3px; /* Altura da linha */
+    background-color: #142433; /* Cor da linha */
+    margin: 0; /* Remove margens para alinhar perfeitamente */
+    width: 100%; /* Largura total do container */
+    margin-bottom: 10px;
+}
+
+.cards-teacher-container::-webkit-scrollbar {
+    width: 25px;
+}
+
+.cards-teacher-container::-webkit-scrollbar-track {
+    background: white;
+    border: 2px solid rgb(227, 204, 26);
+    border-radius: 30px;
+}
+
+.cards-teacher-container::-webkit-scrollbar-thumb {
+    background: #142433;
+    border-radius: 10px; 
+}
+
+.cards-teacher-container::-webkit-scrollbar-thumb:hover {
+    background: #22374d;
+}
+
