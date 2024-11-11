@@ -1,9 +1,9 @@
 .activity-card {
   background-color: white;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 40px;
   width: 320px;
   display: flex;
   justify-content: space-between;
@@ -13,41 +13,48 @@
 
 .activity-info {
   display: flex;
+  padding-left: 20px;
   flex-direction: column;
   margin-bottom: auto;
 }
 
-.activity-details{
-  display: flex;
-  flex-direction: column;
+#date, #status{
+  color: #808080;
+}
+
+.activity-button{
+  padding-right: 5px;
+  /* display: flex;
+  flex-direction: column; */
   margin-top: auto;
 }
 
 .activity-date{
   align-self: flex-start;
-  margin-bottom: 50px;
+ 
 }
 
 .activity-status{
-  align-self: flex-end;
+  padding-top: 20px;
 }
 
 .see-more-button{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   display: flex;
   justify-content: center;
-  border-radius: 8px;
-  border: thin solid;
-  width: 80px;
+  border-radius: 20px;
+  border: none;
+  width: 90px;
   cursor: pointer;
-  box-shadow: inset;
-  size: 10cap;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  padding: 6px;
-  background-color: white;
+  padding: 8px;
+  color: white;
+  background-color: #132433;
   margin-top: 35px;
 }
 
 .see-more-button:active {
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #132433;
   transform: translateY(4px);
 }
