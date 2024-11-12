@@ -15,7 +15,7 @@ button {
     height: 45px;
 }
 
-.teacher-screen {
+.adm-screen {
     background-image: url('/src/assets/images/blue_bg.png');
     background-size: cover;
     background-position: center;
@@ -27,12 +27,7 @@ button {
     align-items: center;
 }
 
-.buttons-container {
-    display: flex;
-    gap: 50px;
-}
-
-.content-teacher-dashboard {
+.content-adm-dashboard {
     background-color: white;
     border-radius: 40px;
     padding: 10px;
@@ -66,4 +61,5 @@ button {
     margin: 0; /* Remove margens para alinhar perfeitamente */
     width: 100%; /* Largura total do container */
     margin-bottom: 10px;
+    
 }
