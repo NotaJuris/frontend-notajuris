@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './AdminReport.css';
-import NavbarTeacher from '../components/TeacherComponents/NavbarTeacher/NavbarTeacher';
 import ButtonLogic from "../components/AdminComponents/ButtonLogic/ButtonLogic";
 import ReportContent from "../components/AdminComponents/ButtonLogic/ReportContent";
 import Comp1 from "../components/AdminComponents/ButtonLogic/Component1";
 import Comp2 from "../components/AdminComponents/ButtonLogic/Component2";
 import Comp3 from "../components/AdminComponents/ButtonLogic/Component3";
-import ButtonGroup from '../components/AdminComponents/ButtonLogic/ButtonGroup';
+// import NavbarAdm from '../components/AdminComponents/NavbarAdm/NavbarAdm';
 
 const AdminReport = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -16,7 +15,7 @@ const AdminReport = () => {
     return (
         <div className='report-screen'>
             <div className='adm-navbar'>
-                {/* <NavbarTeacher /> */}
+                {/* <NavbarAdm /> */}
             </div>
             <div className='report-dashboard'>
                 <div className='header-container'>

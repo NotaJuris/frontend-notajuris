@@ -1,3 +1,69 @@
 .content-button {
+  padding: 0 20px;
+  overflow: auto;
+  max-height: 40vh;
+}
 
+/* Estilizando a scrollbar */
+.content-button::-webkit-scrollbar {
+  width: 12px; /* Largura da scrollbar */
+}
+
+.content-button::-webkit-scrollbar-track {
+  background: #fad9a6; /* Cor do track da scrollbar */
+  border-radius: 10px;
+}
+
+.content-button::-webkit-scrollbar-thumb {
+  background: #142433; /* Cor do thumb da scrollbar */
+  border-radius: 10px;
+}
+
+.content-button::-webkit-scrollbar-thumb:hover {
+  background: #295264; /* Cor do thumb da scrollbar ao passar o mouse */
+}
+
+.content-button h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.content-button ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.content-button li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.title-activity {
+    font-weight: bold;
+}
+
+.content-button .enviadas,
+.content-button .rejeitadas,
+.content-button .devolvidas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.content-button .enviadas svg,
+.content-button .rejeitadas svg,
+.content-button .devolvidas svg {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.atividade-item {
+  display: flex;
+  justify-content: space-between; /* Alinha os itens nas extremidades */
+  padding: 10px;
+  border: 1px solid #fad9a6;
+  border-radius: 25px;
+  background: none; 
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import CardsTeacherHome from "../components/TeacherComponents/CardsTeacher/CardsTeacherHome";
-import NavbarTeacher from "../components/TeacherComponents/NavbarTeacher/NavbarTeacher";
+// import NavbarTeacher from "../components/TeacherComponents/NavbarTeacher/NavbarTeacher";
 import "./TeacherScreen.css";
 
 const TeacherScreen = () => {
   return (
     <div className="teacher-screen">
-      <NavbarTeacher />
+      {/* <NavbarTeacher /> */}
       <div className="teacher-dashboard">
         <div className="content-teacher-dashboard">
           <div className="h2-home">

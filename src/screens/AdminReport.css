@@ -5,6 +5,9 @@
     border-radius: 25px;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow: 0 4px 20px #142433;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container {
@@ -12,18 +15,19 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .divider-report {
     width: 100%;
-    border: 1px solid #142433;
+    border: 2px solid #295264;
     margin: 20px 0;
 }
 
 .header-container h2 {
     margin: 0 20px;
     flex: 1;
-    font-size: 30px;
+    font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
 }
 
 .buttons-container {
@@ -31,10 +35,29 @@
     gap: 10px;
     flex: 1;
     justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.report-content {
+    width: 100%;
+    flex: 1;
 }
 
 .adm-report-content {
     margin: 0 20px;
+    overflow: auto;
+}
+
+.enviadas .rejeitadas .devolvidas p {
+    font-weight: bold;
 }
 
 /* Media Queries */
@@ -42,6 +65,7 @@
     .report-dashboard {
         width: 90vw;
         min-height: 60vh;
+        padding: 15px;
     }
 
     .header-container {
@@ -51,10 +75,12 @@
 
     .header-container h2 {
         margin: 10px 0;
+        font-size: 1.5rem; /* Ajuste o tamanho da fonte conforme necessário */
     }
 
     .buttons-container {
         justify-content: flex-start;
+        width: 100%;
     }
 }
 
@@ -62,6 +88,7 @@
     .report-dashboard {
         width: 95vw;
         min-height: 50vh;
+        padding: 10px;
     }
 
     .header-container {
@@ -71,10 +98,11 @@
 
     .header-container h2 {
         margin: 10px 0;
+        font-size: 1.2rem; /* Ajuste o tamanho da fonte conforme necessário */
     }
 
     .buttons-container {
         justify-content: flex-start;
-        flex-wrap: wrap;
+        width: 100%;
     }
 }

@@ -1,5 +1,6 @@
 import './Content.css';
 import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 function Comp1() {
   const [showEnviadas, setShowEnviadas] = useState(false);
@@ -11,18 +12,18 @@ function Comp1() {
   const toggleDevolvidas = () => setShowDevolvidas(!showDevolvidas);
 
   const atividadesEnviadas = [
-    { id: 1, nome: 'Atividade 1', quantidade: 10 },
-    { id: 2, nome: 'Atividade 2', quantidade: 5 },
+    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 10 },
+    { id: 2, nome: 'Prática Jurídica Real', quantidade: 5 },
   ];
 
   const atividadesRejeitadas = [
-    { id: 1, nome: 'Atividade 3', quantidade: 2 },
-    { id: 2, nome: 'Atividade 4', quantidade: 1 },
+    { id: 1, nome: 'Pratica Jurídica Simulada', quantidade: 2 },
+    { id: 2, nome: 'Prática Jurídica Real', quantidade: 1 },
   ];
 
   const atividadesDevolvidas = [
-    { id: 1, nome: 'Atividade 5', quantidade: 3 },
-    { id: 2, nome: 'Atividade 6', quantidade: 4 },
+    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 3 },
+    { id: 2, nome: 'Praática Jurídica Real', quantidade: 4 },
   ];
 
   return (
@@ -31,13 +32,19 @@ function Comp1() {
       
       <div>
         <p className='enviadas' onClick={toggleEnviadas}>
+          <div className='title-activity'>
           Atividades Enviadas
+          </div>
+          {showEnviadas ? <FaEyeSlash /> : <FaEye />}
         </p>
         {showEnviadas && (
           <ul>
             {atividadesEnviadas.map(atividade => (
               <li key={atividade.id}>
-                {atividade.nome}: {atividade.quantidade}
+                <div className='atividade-item'>
+                  <span>{atividade.nome}</span>
+                  <span>{atividade.quantidade}</span>
+                </div>
               </li>
             ))}
           </ul>
@@ -46,13 +53,19 @@ function Comp1() {
 
       <div>
         <p className='rejeitadas' onClick={toggleRejeitadas}>
+          <div className='title-activity'>
           Atividades Rejeitadas
+          </div>
+          {showRejeitadas ? <FaEyeSlash /> : <FaEye />}
         </p>
         {showRejeitadas && (
           <ul>
             {atividadesRejeitadas.map(atividade => (
               <li key={atividade.id}>
-                {atividade.nome}: {atividade.quantidade}
+                <div className='atividade-item'>
+                  <span>{atividade.nome}</span>
+                  <span>{atividade.quantidade}</span>
+                </div>
               </li>
             ))}
           </ul>
@@ -61,13 +74,19 @@ function Comp1() {
 
       <div>
         <p className='devolvidas' onClick={toggleDevolvidas}>
+          <div className='title-activity'>
           Atividades Devolvidas
+          </div>
+          {showDevolvidas ? <FaEyeSlash /> : <FaEye />}
         </p>
         {showDevolvidas && (
           <ul>
             {atividadesDevolvidas.map(atividade => (
               <li key={atividade.id}>
-                {atividade.nome}: {atividade.quantidade}
+                <div className='atividade-item'>
+                  <span>{atividade.nome}</span>
+                  <span>{atividade.quantidade}</span>
+                </div>
               </li>
             ))}
           </ul>

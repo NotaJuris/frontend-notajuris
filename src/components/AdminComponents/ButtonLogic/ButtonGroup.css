@@ -7,12 +7,50 @@
 }
 
 .button-group button {
-    margin: 5px; /* Ajuste o margin para evitar overflow */
-    padding: 15px 100px; /* Ajuste o padding para garantir que os botões caibam no contêiner */
-    border: none;
-    border-radius: 25px;
+    padding: 10px 20px; /* Ajuste o padding conforme necessário */
     background-color: #142433;
     color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 auto; /* Permite que os botões cresçam e encolham conforme necessário */
+    max-width: 200px; /* Define um tamanho máximo para os botões */
+}
+
+.button-group button:hover {
+    background-color: #295264;
+}
+
+.button-group button:focus {
+    outline: none; /* Remove o outline padrão do navegador */
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), 0 0 0 8px rgba(41, 82, 100, 0.5); /* Adiciona um destaque ao redor do botão */
+    background-color: #295264; /* Opcional: pode manter a mesma cor de fundo do hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .button-group {
+        justify-content: center; /* Centraliza os botões em telas menores */
+    }
+
+    .button-group button {
+        flex: 1 1 100%; /* Faz com que os botões ocupem 100% da largura disponível */
+        max-width: none; /* Remove o tamanho máximo dos botões */
+    }
+}
+
+@media (max-width: 480px) {
+    .button-group {
+        justify-content: center; /* Centraliza os botões em telas menores */
+    }
+
+    .button-group button {
+        flex: 1 1 100%; /* Faz com que os botões ocupem 100% da largura disponível */
+        max-width: none; /* Remove o tamanho máximo dos botões */
+        font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+        padding: 8px 16px; /* Ajusta o padding para telas menores */
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiAccountCircleFill } from "react-icons/ri";
 import CardsTeacherStudents from '../components/TeacherComponents/CardsTeacher/CardsTeacherStudents';
-import NavbarTeacher from '../components/TeacherComponents/NavbarTeacher/NavbarTeacher';
+// import NavbarTeacher from '../components/TeacherComponents/NavbarTeacher/NavbarTeacher';
 import './TeacherStudentsScreen.css';
 
 const TeacherStudentsScreen = () => {
@@ -42,7 +42,7 @@ const TeacherStudentsScreen = () => {
   
   return (
     <div className="teacher-screen">
-      <NavbarTeacher />
+      {/* <NavbarTeacher /> */}
       <div className="h2-teacher-students">
         <h2>Alunos cadastrados</h2>
       </div>
