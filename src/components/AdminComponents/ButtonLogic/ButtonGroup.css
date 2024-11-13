@@ -1,6 +1,18 @@
-.button-report-container {
+.button-group {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: flex-end; /* Alinha os botões à direita */
 }
 
+.button-group button {
+    margin: 5px; /* Ajuste o margin para evitar overflow */
+    padding: 15px 100px; /* Ajuste o padding para garantir que os botões caibam no contêiner */
+    border: none;
+    border-radius: 25px;
+    background-color: #142433;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}

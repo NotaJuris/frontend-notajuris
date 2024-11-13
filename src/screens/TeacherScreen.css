@@ -1,3 +1,4 @@
+/* TeacherScreen.module.css */
 body {
     margin: 0;
     padding: 0;
@@ -17,21 +18,11 @@ body {
     align-items: center;
 }
 
-
-
 .content-teacher-dashboard {
     background-color: white;
     border-radius: 40px;
     padding: 10px;
     width: 100%;
-    max-width: 1500px;
-    height: 80vh;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-
-
 }
 
 .cards-teacher-container {
