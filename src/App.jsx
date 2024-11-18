@@ -10,6 +10,7 @@ import StudentScreen from './screens/StudentScreen';
 import TeacherStudentsScreen from './screens/TeacherStudentsScreen';
 import UserRegister from './screens/UserRegister';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminPanel from './screens/AdminPanel';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/TeacherScreen" element={<TeacherScreen />} />
         <Route path="/TeacherStudentsScreen" element={<TeacherStudentsScreen />} /> 
         <Route path="/UserRegister" element={<UserRegister />} />
+        <Route path="/AdminPanel" element={<AdminPanel />} />
       </Routes>
     </Router> 
   );

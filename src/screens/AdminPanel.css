@@ -1,0 +1,81 @@
+.admin-main {
+  background-image: url('../assets/images/background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Garantir que a altura ocupe 100% da tela */
+
+}
+
+.PanelContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  padding-top: 10px;
+  align-items: center; 
+  justify-content: center;  
+  background-color: #fff;
+  max-height: 500px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.PanelContainer h1{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+.PanelContainer h2{
+  font-weight: 300;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.PanelElements{
+  display: flex;
+  flex-direction: row; /* Organizar os botões em linha */
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px; /* Espaço entre títulos e botões */
+  margin-bottom: 5px;
+}
+
+.ButtonContainer{;
+  padding: 5px;
+  margin-bottom: 5px;
+
+}
+
+.ButtonImage{
+  max-width: 150px ;
+  height: 150px;
+  border-radius: 25px;
+  
+}
+
+.RedirectButton {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  margin-top: 17px;
+  border-radius: 25px;
+  border: none;
+  max-width: 200px;
+  width: 200px;
+  height: auto; 
+  background-color: #132433;
+  color: #fff;
+  /* margin-top: 20px; */
+}
+
+.RedirectButton:hover{
+  /* background-color: #ffffff; */
+  color:#132433;  
+  cursor: pointer;
+}
+

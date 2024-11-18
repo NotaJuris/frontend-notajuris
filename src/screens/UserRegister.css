@@ -15,18 +15,7 @@ main{
   height: 100vh; /* Ocupa 100% da altura da viewport */
 }
 
-.ContentSection{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-image: url('../assets/images/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat; 
-  
-  
 
-}
 
 .Container{  
   display: flex;  
