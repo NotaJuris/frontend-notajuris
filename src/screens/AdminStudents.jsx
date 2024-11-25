@@ -21,6 +21,16 @@ const AdminStudents = () => {
           { id: 2, name: 'Atividade 2', description: 'Descrição da Atividade 2', attachment: 'Anexo 2' }
         ],
       },
+      {
+        name: 'Sandy Junior',
+        registration: '9876543',
+        activities: [
+            {id: 1, name: 'Atividade 1', description: 'Descrição da Atividade 1', attachment: 'Anexo 1' },
+            {id: 2, name: 'Atividade 2', description: 'Descrição da Atividade 2', attachment: 'Anexo 2' },
+            {id: 2, name: 'Atividade 2', description: 'Descrição da Atividade 2', attachment: 'Anexo 2' },
+            {id: 2, name: 'Atividade 2', description: 'Descrição da Atividade 2', attachment: 'Anexo 2' },
+        ]
+      }
       
   ];
 
