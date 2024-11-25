@@ -7,6 +7,7 @@ import AdminScreen from './screens/AdminScreen';
 import StudentScreen from './screens/StudentScreen';
 import TeacherStudentsScreen from './screens/TeacherStudentsScreen';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AdminStudents from './screens/AdminStudents';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/TeacherScreen" element={<TeacherScreen />} />
         <Route path="/TeacherStudentsScreen" element={<TeacherStudentsScreen />} />
         <Route path="/AdminReport" element={<AdminReport/>} />
+        <Route path="/AdminStudents" element={<AdminStudents/>} />
       </Routes>
     </Router>
   );
