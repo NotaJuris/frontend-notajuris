@@ -1,7 +1,7 @@
 import React from 'react';
 import CardsTeacherHome from '../components/TeacherComponents/CardsTeacher/CardsTeacherHome';
 import NavbarTeacher from '../components/TeacherComponents/NavbarTeacher/NavbarTeacher';
-import './TeacherScreen.css';
+import './TeacherScreen.modules.css';
 
 const TeacherScreen = () => {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { RiAccountCircleFill } from "react-icons/ri";
 import CardsTeacherStudents from '../components/TeacherComponents/CardsTeacher/CardsTeacherStudents';
 import NavbarTeacher from '../components/TeacherComponents/NavbarTeacher/NavbarTeacher';
-import './TeacherStudentsScreen.css';
+import './TeacherStudentsScreen.modules.css';
 
 const TeacherStudentsScreen = () => {
   const students = [
