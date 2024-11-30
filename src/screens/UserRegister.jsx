@@ -4,9 +4,9 @@ import "./UserRegister.css";
 
 function Form() {
   return (
-    <main>
+    <div>
       <Navbar name="Felipe" />
-      <section className="ContentSection">
+      <main>
         <div className="Container">
           <div className="FormContent">
             <h2>Cadastrar Usuário</h2>
@@ -46,8 +46,9 @@ function Form() {
             </div>
           </div>
         </div>
-      </section>
     </main>
+
+    </div>
   );
 }
 
