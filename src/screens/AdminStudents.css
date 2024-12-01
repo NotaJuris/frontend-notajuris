@@ -1,3 +1,10 @@
+.AdminStudents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .adm-students-dashboard {
     width: 80vw;
     height: 70vh;

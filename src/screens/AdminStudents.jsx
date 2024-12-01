@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash, FaSearch } from 'react-icons/fa';
 import './AdminStudents.css';
+import Navbar from '../components/StudentComponents/NavbarComponent/Navbar';
 
 const AdminStudents = () => {
   const students = [
@@ -35,25 +36,28 @@ const AdminStudents = () => {
   ];
 
   return (
-    <div className="AdminStudents">
-        <div className="adm-students-dashboard">
-            <div className="students-header-container">
-                <h2>Área dos Alunos</h2>
-                <div className='search-bar-container'>
-                    <input type="text" className='search-bar' placeholder="Buscar aluno ou atividade" />
-                    <FaSearch className='search-icon' />
-                </div>
-            </div>
-            <hr className='divider'/>
-            <div className="content">
-                <div className='students-list'>
-                    {students.map(student => (
-                        <StudentCard key={student.registration} student={student} />
-                    ))}
-                </div>
-            </div>
-        </div>
-    </div>
+    <>
+    <Navbar name="Lucas"/>
+      <div className="AdminStudents">
+          <div className="adm-students-dashboard">
+              <div className="students-header-container">
+                  <h2>Área dos Alunos</h2>
+                  <div className='search-bar-container'>
+                      <input type="text" className='search-bar' placeholder="Buscar aluno ou atividade" />
+                      <FaSearch className='search-icon' />
+                  </div>
+              </div>
+              <hr className='divider'/>
+              <div className="content">
+                  <div className='students-list'>
+                      {students.map(student => (
+                          <StudentCard key={student.registration} student={student} />
+                      ))}
+                  </div>
+              </div>
+          </div>
+      </div>
+    </>
   );
 };
 
