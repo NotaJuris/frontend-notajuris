@@ -1,3 +1,10 @@
+.report-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .report-dashboard {
     width: 80vw;
     min-height: 70vh;
