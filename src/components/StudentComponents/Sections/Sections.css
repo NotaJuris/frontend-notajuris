@@ -1,14 +1,15 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  
-} */
+
+body{
+  height: 100vh;
+  background-image: url('../../../assets/images/background.jpg');
+  background-size: cover;
+}
+
 @media (max-width: 768px) { 
 
   body, html {
     overflow-x: hidden;
     height: 100%;
-    
   }
    
   .container{
@@ -18,6 +19,7 @@
     padding-bottom: 80px;
     max-width: 100%;
     width: 100%;
+    height: 100vh;
   }
 
   .see-more-button{
@@ -71,17 +73,29 @@ Aqui acaba o @media
 
 .main{
   height: 100vh; /* Para que a altura ocupe 100% da viewport */
- 
+  
+
+}
+  
+.sections *{
+  margin: 0;
+  padding: 0;
 }
 
 .left-section{
+  
   display: flex;
   flex:2;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 80vh;
   background-color: white;
+  border-radius: 20px;
   
 
 }
@@ -102,7 +116,7 @@ Aqui acaba o @media
   width: 65px;
   text-align: center;
   border-radius:50px;
-  border: thin solid;
+  border: solid 2px;
   font-weight: 100;
   font-size: 50px;
   background: transparent;
@@ -122,8 +136,7 @@ Aqui acaba o @media
 
 .right-section{ 
   display: flex;
-
-  /* 
+/*   
   margin-left: auto;
   margin-top: auto;
    */
@@ -132,15 +145,21 @@ Aqui acaba o @media
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #333e54;
+  /* background-color: #333e54; */
   padding: 30px;
+  margin-right: 10px;
+  overflow-x: hidden;
   overflow-y: auto;  
-  scrollbar-width: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+  scrollbar-color: #132433 #ffffff;
+  
 }
+
 .container{
-  display: flex;
   height: 100vh;
+  
+  display: flex;
+  
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -156,7 +175,11 @@ Aqui acaba o @media
   align-items: center;
   height: auto;
   max-height: 100vh;
+ 
 }
 
-
+.right-section {
+  overflow-y: auto; /* Necessário para que a scrollbar apareça */
+  height: 100%; /* Ajuste o tamanho conforme necessário */
+}
 
