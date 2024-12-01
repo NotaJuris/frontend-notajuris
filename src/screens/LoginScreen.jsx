@@ -58,6 +58,7 @@ const LoginScreen = () => {
   };
 
   return (
+  <main>
     <div className="login-background">
       <div className="login-container">
       <form onSubmit={handleSubmit}>

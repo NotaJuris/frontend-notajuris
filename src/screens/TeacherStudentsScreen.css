@@ -1,0 +1,35 @@
+div#root {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.teacher-students-screen {
+    background-color: #f6f7f8;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa toda a altura disponível */
+    box-sizing: border-box;
+}
+
+.h2-teacher-students {
+    font-size: 1.2rem;
+    padding: 10px;
+    padding-left: 50px;
+    font-weight: bold;
+    flex-shrink: 0; /* Evita que este elemento seja redimensionado */
+}
+
+.cards-teacher-students-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 50%; /* Ajusta a altura com base no espaço disponível */
+    box-sizing: border-box;
+    overflow-y: scroll; /* Ativa o scroll vertical */
+    scroll-behavior: smooth; /* Suaviza o scroll */
+    margin-top: 30px;
+}
