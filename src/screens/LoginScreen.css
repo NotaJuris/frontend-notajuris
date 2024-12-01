@@ -1,3 +1,10 @@
+.login-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 body {
     background-color: #295264;
     background-image: url(../assets/images/blue_bg.png);
