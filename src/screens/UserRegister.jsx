@@ -4,10 +4,10 @@ import "./UserRegister.css";
 
 function Form() {
   return (
-    <div>
+    <>
       <Navbar name="Felipe" />
       <main>
-        <body className="body-user-register">
+        <div className="body-user-register">
           <div className="Container">
             <div className="FormContent">
               <h2>Cadastrar Usuário</h2>
@@ -28,10 +28,13 @@ function Form() {
                     />
                   </div>
                   <div className="FormGroup">
-                    <input type="email" placeholder="E-Mail" />
+                    <input type="phone" placeholder="Telefone" />
                   </div>
                   <div className="FormGroup">
-                    <input type="email" placeholder="E-Mail" />
+                    <input type="text" placeholder="Período" />
+                  </div>
+                  <div className="FormGroup">
+                    <input type="text" placeholder="Turno" />
                   </div>
                   <div className="FormGroup">
                     <input type="email" placeholder="E-Mail" />
@@ -46,9 +49,9 @@ function Form() {
               </div>
             </div>
           </div>
-        </body>
+        </div>
       </main>
-    </div>
+    </>
   );
 }
 
