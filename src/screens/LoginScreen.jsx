@@ -58,43 +58,43 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="login-background">
-      <main>
-          <div className="login-container">
-          <form onSubmit={handleSubmit}>
-            <img src={logo_notajuris} alt="Logo NotaJuris" className="NavbarLogo" />
-            <h1>Seja bem-vindo!</h1>
-            <span className='welcome-subtitle'>Acesso ao sistema</span>
-            <div className="login-input-field">
-              <input 
-                type="text" 
-                placeholder="Matrícula"
-                required
-                onChange={(e) => setLoginNumber(e.target.value)}
-              />
-              <FaUser className="login-icon" />
-            </div>
-            <div className="login-input-field">
-              <input 
-                type="password" 
-                placeholder="Senha"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <FaLock className="login-icon" />
-            </div>
+    <main>
+      <div className="login-background">
+            <div className="login-container">
+            <form onSubmit={handleSubmit}>
+              <img src={logo_notajuris} alt="Logo NotaJuris" className="NavbarLogo" />
+              <h1>Seja bem-vindo!</h1>
+              <span className='welcome-subtitle'>Acesso ao sistema</span>
+              <div className="login-input-field">
+                <input 
+                  type="text" 
+                  placeholder="Matrícula"
+                  required
+                  onChange={(e) => setLoginNumber(e.target.value)}
+                />
+                <FaUser className="login-icon" />
+              </div>
+              <div className="login-input-field">
+                <input 
+                  type="password" 
+                  placeholder="Senha"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <FaLock className="login-icon" />
+              </div>
 
-            <div className="login-password-forget">
-              <a href="#">Esqueci minha senha</a>
-            </div>
+              <div className="login-password-forget">
+                <a href="#">Esqueci minha senha</a>
+              </div>
 
-                {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+                  {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 
-                <button>Entrar</button>
-              </form>
-            </div>
-        </main>
-    </div>
+                  <button>Entrar</button>
+                </form>
+              </div>
+      </div>
+    </main>
   );
 };
 
