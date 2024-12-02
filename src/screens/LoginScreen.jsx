@@ -29,25 +29,16 @@ const LoginScreen = () => {
 
       //Aqui agora eu estou fazendo a requisição pra pegar as informações do usuário
       const userResponse = await apiScripts.getMe(token)
+
+      //armazena token no localStorage.
+      localStorage.setItem("currentUserToken", token);
+
       const userInfo = userResponse.data
-      console.log(userInfo)
 
-      /* 
+      //armazena informações do usuário no LocalStorage
+      localStorage.setItem("currentUser", JSON.stringify(userInfo))
 
-      //Colocando o token no cabeçalho da requisição
-      const headers = { Authorization: `Bearer ${token}` };
-
-      //Aqui agora eu estou fazendo a requisição pra pegar as informações do usuário
-      const userResponse = await axios.get(
-        "https://capable-dream-production.up.railway.app/v1/usuarios/me",
-        {
-          headers: headers,
-        }
-      );
-
-      //Aqui para exibir as informações do usuário
-      const userInfo = userResponse.data;
-
+      //redirecionamento de tela
       if (userInfo.cargo === "ORIENTADOR") {
         navigate("/TeacherScreen");
       } else if (userInfo.cargo === "ALUNO") {
@@ -56,7 +47,8 @@ const LoginScreen = () => {
         navigate("/TeacherScreen");
       } else if (userInfo.cargo === "ADMINISTRADOR") {
         navigate("/AdminScreen");
-      }*/
+      }
+
     } catch (error) {
       console.error("Erro: ", error);
       setErrorMessage("Erro ao se conectar com a API.");

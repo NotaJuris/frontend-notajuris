@@ -23,7 +23,7 @@ class ApiScripts {
       return axios.get(
         `/v1/usuarios/me`,
         {
-          "headers": {
+          headers: {
             Authorization: `Bearer ${token}`
           }
         }
