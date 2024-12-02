@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import './LoginScreen.css';
 import logo_notajuris from '../assets/images/logo_notajuris_invert.svg'
+import ApiScripts from "../scripts/ApiEndpoints";
 
 const LoginScreen = () => {
   const [loginNumber, setLoginNumber] = useState("");
@@ -17,16 +18,21 @@ const LoginScreen = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://capable-dream-production.up.railway.app/v1/auth/login",
-        {
-          matricula: loginNumber.toString(),
-          senha: password,
-        }
-      );
+      //objeto que contem os métodos de api
+      const apiScripts = new ApiScripts();
+
+      const response = await apiScripts.doLogin(loginNumber, password)
+      console.log(response);
 
       //Aqui eu estou pegando o token que a API retorna
       const token = response.data.token;
+
+      //Aqui agora eu estou fazendo a requisição pra pegar as informações do usuário
+      const userResponse = await apiScripts.getMe(token)
+      const userInfo = userResponse.data
+      console.log(userInfo)
+
+      /* 
 
       //Colocando o token no cabeçalho da requisição
       const headers = { Authorization: `Bearer ${token}` };
@@ -50,7 +56,7 @@ const LoginScreen = () => {
         navigate("/TeacherScreen");
       } else if (userInfo.cargo === "ADMINISTRADOR") {
         navigate("/AdminScreen");
-      }
+      }*/
     } catch (error) {
       console.error("Erro: ", error);
       setErrorMessage("Erro ao se conectar com a API.");

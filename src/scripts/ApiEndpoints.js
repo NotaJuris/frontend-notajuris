@@ -7,6 +7,31 @@ class ApiScripts {
       axios.defaults.withCredentials = true;
     }
 
+    doLogin(matricula, senha){
+      return axios.post(
+        `/v1/auth/login`,
+        {
+          "matricula": matricula,
+          "senha": senha
+        },
+      )
+      .then((response) => response)
+      .catch((error)=> error)
+    }
+
+    getMe(token){
+      return axios.get(
+        `/v1/usuarios/me`,
+        {
+          "headers": {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then( (response) => response)
+      .catch( (error) => error);
+    }
+
     getAtividadesByUserId(userId, token){
       return axios.get(`/v1/atividades/${userId}/usuario`, {
         headers: {
@@ -17,6 +42,8 @@ class ApiScripts {
       .catch(error => {throw error});
       
     };
+
+
   }
 
 export default ApiScripts
