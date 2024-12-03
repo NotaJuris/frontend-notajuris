@@ -11,29 +11,29 @@ axios.defaults.withCredentials = true;
 
 function Sections() {
 
-  var listaAtividades;
+  const [listaAtividades, setListaAtividades] = useState([]);
 
-  /*const [formData, setFormData] = useState({
-    title: '',
-    date: '',
-    status: ''
-  });*/
+  useEffect(() => {
 
-  /*useEffect(()=>{
-    const fetchData = async () => {
-      const apiScripts = new ApiScripts();
-      try{
-        listaAtividades = await apiScripts.getAtividadesByUserId(
-          '2',
-          'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGktbm90YWp1cmlzIiwic3ViIjoiMiIsImlhdCI6MTczMjc5MzI1MywiZXhwIjoxNzMyODAwNDUzfQ.7a8KjrMUO7uE2jLFH81pF2tFL90auZL9KBsduC_diRqaSxJs5M2nLmxBwlL-POVHO_dXS1KOpGKS2KuOTb3pdA'
-        );
-      } catch (error){
-        console.error(error)
+    const apiScripts = new ApiScripts();
+
+    async function fetchAtividades(){
+
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"))
+      const token = localStorage.getItem("currentUserToken")
+
+      const atividades = await apiScripts.getAtividadesByUserId(currentUser.id, token)
+      console.log(atividades)
+
+      if(atividades){
+        setListaAtividades(atividades)
       }
+
     }
-    fetchData()
-    console.log(listaAtividades)
-  }, [])*/
+
+    fetchAtividades();
+
+  },[])
 
   const handleButtonClick = () => {
     /*const token = localStorage.getItem('token'); // Obtém o token do localStorage
@@ -70,7 +70,17 @@ function Sections() {
       <section className="right-section">
         <div className="card-container">
           <h2 style={{ color: "white" }}>Histórico de atividades</h2>
-          <Card title={"teste"} date={"teste"} status={"test"} />
+          {
+            listaAtividades.map((atividade, index) => (
+              <Card 
+                index={index}
+                title={atividade.tipo} 
+                date={`${atividade.data_atividade[2]}/${atividade.data_atividade[1]}/${atividade.data_atividade[0]}`} 
+                status={atividade.status} 
+                
+              />
+            ))
+          }
         </div>
       </section>
     </main>
