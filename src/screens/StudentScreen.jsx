@@ -3,11 +3,14 @@ import Section from '../components/StudentComponents/Sections/Sections';
 import React  from 'react';
 
 function StudentScreen() {
+
+  const usuarioLogado = JSON.parse(localStorage.getItem("currentUser"));
+
   return (
-    <div>
-      <Navbar name="Felipe"/> 
+    <>
+      <Navbar name={usuarioLogado.nome}/> 
       <Section/>
-    </div>      
+    </>      
   );
 }
 

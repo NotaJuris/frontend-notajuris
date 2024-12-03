@@ -43,6 +43,17 @@ class ApiScripts {
       
     };
 
+    getNotifications(userId, token){
+      return axios.get(`/v1/notificacao/${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.data)
+      .catch(error => {throw error});
+      
+    }
+
 
   }
 

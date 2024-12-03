@@ -13,13 +13,13 @@ function Sections() {
 
   var listaAtividades;
 
-  const [formData, setFormData] = useState({
+  /*const [formData, setFormData] = useState({
     title: '',
     date: '',
     status: ''
-  });
+  });*/
 
-  useEffect(()=>{
+  /*useEffect(()=>{
     const fetchData = async () => {
       const apiScripts = new ApiScripts();
       try{
@@ -33,10 +33,10 @@ function Sections() {
     }
     fetchData()
     console.log(listaAtividades)
-  }, [])
+  }, [])*/
 
   const handleButtonClick = () => {
-    const token = localStorage.getItem('token'); // Obtém o token do localStorage
+    /*const token = localStorage.getItem('token'); // Obtém o token do localStorage
     const userId = '2'; // Substitua pelo ID do usuário real
 
     axios.get(`/v1/atividades/${userId}/usuario`, {
@@ -53,7 +53,7 @@ function Sections() {
         status: data.status 
       });
     })
-    .catch(error => console.error(error));
+    .catch(error => console.error(error));*/
   };
 
   return (
@@ -70,7 +70,7 @@ function Sections() {
       <section className="right-section">
         <div className="card-container">
           <h2 style={{ color: "white" }}>Histórico de atividades</h2>
-          <Card title={formData.title} date={formData.date} status={formData.status} />
+          <Card title={"teste"} date={"teste"} status={"test"} />
         </div>
       </section>
     </main>

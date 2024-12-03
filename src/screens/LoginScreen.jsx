@@ -44,9 +44,9 @@ const LoginScreen = () => {
       } else if (userInfo.cargo === "ALUNO") {
         navigate("/StudentScreen");
       } else if (userInfo.cargo === "SUPERADMIN") {
-        navigate("/TeacherScreen");
+        navigate("/AdminPanel");
       } else if (userInfo.cargo === "ADMINISTRADOR") {
-        navigate("/AdminScreen");
+        navigate("/AdminPanel");
       }
 
     } catch (error) {

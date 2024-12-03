@@ -28,6 +28,34 @@
 
 }
 
+.notificationsPanel{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  top: 60px;
+  right: 50px;
+  border-radius: 20px;
+  padding: 15px;
+  width: 200px;
+}
+
+.cardNotification{
+  color:black;
+  font-size: 12px;
+  border-width: 2px;
+  border-color: #000;
+  border-style: solid;
+  padding: 5px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.cardNotification .cardNotificationTitle{
+  font-family: poppins;
+  font-weight: bold;
+}
+
 
 html,body
 {
