@@ -1,7 +1,6 @@
 import React from "react";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useState } from "react";
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import './LoginScreen.css';
 import logo_notajuris from '../assets/images/logo_notajuris_invert.svg'

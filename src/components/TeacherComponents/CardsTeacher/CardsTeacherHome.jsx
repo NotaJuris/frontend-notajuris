@@ -1,42 +1,47 @@
 import React, { useState } from 'react';
 import './CardsTeacherHome.css';
+import ApiScripts from "../../../scripts/ApiEndpoints"
 
-const CardsTeacherHome = ({ title, fullName, registrationNumber, date }) => {
+function CardsTeacherHome(props){
   const [showModal, setShowModal] = useState(false); // Estado para controlar o modal
 
   const handleOpenModal = () => {
     setShowModal(true);
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const handleAvaliacao = (avaliacao) => {
+
+    const apiScripts = new ApiScripts();
+    const token = localStorage.getItem("currentUserToken");
+
+    const response = apiScripts.avaliarAtividade(props.atividade.id, avaliacao, token);
+    console.log(response)
+    setShowModal(!showModal);
   };
 
   return (
     <div className="cards-teacher-home">
-      <h2 className="card-teacher-title">{title}</h2>
-      <p className="card-teacher-description">{fullName}</p>
-      <p className="card-teacher-date">Enviado dia {date}</p>
-      <p className="card-teacher-registrationNumber">Matricula: {registrationNumber}</p>
+      <h2 className="card-teacher-title">{props.atividade.tipo}</h2>
+      <p className="card-teacher-description">{props.atividade.descricao}</p>
+      <p className="card-teacher-date">Enviado dia {`${props.atividade.data_atividade[2]}/${props.atividade.data_atividade[1]}/${props.atividade.data_atividade[0]}`}</p>
+      //<p className="card-teacher-registrationNumber">Matricula: {}</p>
       <button className="card-teacher-button" onClick={handleOpenModal}>Ver mais</button>
 
       {showModal && (
         <div className="modal-overlay">
 
           <div className="modal-content">
-            <h3>{title}</h3>
-            <p>Enviado por {fullName} no dia {date}</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatum omnis iusto et similique natus doloribus modi officiis sequi veritatis nam autem, facere repudiandae deleniti eligendi, sint minima veniam. Voluptatem?
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque modi est consequuntur, a aliquid illo voluptatibus perspiciatis repudiandae laborum natus similique doloribus aut repellat adipisci quibusdam quidem veritatis praesentium eos. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam doloribus obcaecati perspiciatis incidunt veritatis ab molestiae accusamus recusandae distinctio voluptas quas, quasi, autem suscipit quam nostrum tempora eligendi eaque vitae. </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque soluta impedit velit sed porro veritatis id rem culpa ipsam consequatur. Dolorum eveniet earum unde dolor quaerat, consequuntur impedit quidem perferendis?</p>
+            <h3>{props.atividade.tipo}</h3>
+            <p>Enviado por {props.atividade.aluno} no dia {`${props.atividade.data_atividade[2]}/${props.atividade.data_atividade[1]}/${props.atividade.data_atividade[0]}`}</p>
+            <p>{props.atividade.descricao}</p>
             <div className="modal-button-container">
-                <button className="close-modal-button" onClick={handleCloseModal}>Reenviar</button>
-                <button className="close-modal-button" onClick={handleCloseModal}>Recusar</button>
-                <button className="close-modal-button" onClick={handleCloseModal}>Aceitar</button>
+                <button className="close-modal-button" onClick={() => handleAvaliacao("REENVIO")}>Reenviar</button>
+                <button className="close-modal-button" onClick={() => handleAvaliacao("REJEITADO")}>Recusar</button>
+                <button className="close-modal-button" onClick={() => handleAvaliacao("ACEITO")}>Aceitar</button>
             </div>
             
           </div>
+          <button onClick={() => setShowModal(!showModal)}>Fechar</button>
         </div>
       )}
     </div>

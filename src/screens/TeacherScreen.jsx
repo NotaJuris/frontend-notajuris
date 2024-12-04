@@ -1,12 +1,70 @@
-import React from "react";
+import React, {useEffect, useState, useReducer} from "react";
 import CardsTeacherHome from "../components/TeacherComponents/CardsTeacher/CardsTeacherHome";
 import Navbar from "../components/StudentComponents/NavbarComponent/Navbar";
 import "./TeacherScreen.css";
+import ApiScripts from "../scripts/ApiEndpoints"
 
 const TeacherScreen = () => {
+
+  const [listaAtividades, setListaAtividades] = useState([]);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const [inputValue, setInputValue] = useState('');
+  const [timer, setTimer] = useState(null);
+  const [listaOriginal, setListaOriginal] = useState([]);
+
+  const inputChanged = e => {
+    setInputValue(e.target.value)
+    console.log(inputValue)
+
+    clearTimeout(timer)
+
+    const newTimer = setTimeout(() => {
+
+      if(inputValue !== " "){
+        console.log(inputValue)
+        const listaFiltrada = listaOriginal.filter(
+          (atividade) => {
+            return (atividade.tipo.toLowerCase().includes(inputValue)) || (atividade.aluno.toLowerCase().includes(inputValue))
+          }
+        )
+        setListaAtividades(listaFiltrada);
+        //forceUpdate();
+      } else {
+        console.log("listaOriginal: "+listaOriginal)
+        setListaAtividades(listaOriginal);
+        console.log("listaAtividades: "+listaAtividades)
+      }
+    }, 1000)
+
+    setTimer(newTimer)
+  }
+
+  useEffect(() => {
+
+    async function fetchData(){
+
+      const apiScripts = new ApiScripts();
+
+      
+      const token = localStorage.getItem("currentUserToken")
+
+      const atividades = await apiScripts.getAllAtividades(token)
+      console.log(atividades)
+
+      if(atividades){
+        setListaAtividades(atividades);
+        setListaOriginal([...atividades]);
+      }
+    }
+
+    fetchData();
+    console.log(listaAtividades)
+
+  },[])
+
   return (
     <>
-      <Navbar name="Lucas"/>
+      <Navbar name={currentUser.nome}/>
       <div className="teacher-screen">
         <div className="teacher-dashboard">
           <div className="content-teacher-dashboard">
@@ -18,6 +76,8 @@ const TeacherScreen = () => {
                   type="text"
                   className="search-bar"
                   placeholder="Pesquisar Atividade ou Aluno"
+                  onChange={inputChanged}
+                  value={inputValue}
                 />
               </div>
             </div>
@@ -25,36 +85,15 @@ const TeacherScreen = () => {
             <hr className="divider" />
             <div className="cards-teacher-container">
               <div className="cards-scrollable">
-                <CardsTeacherHome
-                  title="Atendimento Jurídico"
-                  fullName="Lucas Calixto"
-                  registrationNumber="03341166"
-                  date="26/09/2024"
-                />
-                <CardsTeacherHome
-                  title="Audiência"
-                  fullName="Felipe de Souza"
-                  registrationNumber="03667834"
-                  date="26/09/2024"
-                />
-                <CardsTeacherHome
-                  title="Mediação"
-                  fullName="Natih Santos"
-                  registrationNumber="78563345"
-                  date="26/09/2024"
-                />
-                <CardsTeacherHome
-                  title="Atendimento Jurídico"
-                  fullName="Camille Farias"
-                  registrationNumber="03446784"
-                  date="26/09/2024"
-                />
-                <CardsTeacherHome
-                  title="Audiência"
-                  fullName="Jefferson Querino"
-                  registrationNumber="07856422"
-                  date="26/09/2024"
-                />
+                {
+                  listaAtividades.map((atividade, index, key) => {
+
+                    if(atividade.status==="PENDENTE"){
+                      return <CardsTeacherHome index={index} atividade={atividade}/>
+                    }
+                    return <></>
+                  })
+                }
               </div>
             </div>
           </div>
