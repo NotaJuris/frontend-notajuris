@@ -54,6 +54,16 @@ class ApiScripts {
       
     }
 
+    postAtividade(token, body){
+      return axios.post(`/v1/atividades`, body, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.data)
+      .catch(error => {throw error})
+    }
+
 
   }
 

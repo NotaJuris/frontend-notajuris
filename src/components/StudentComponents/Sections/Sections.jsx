@@ -2,9 +2,9 @@ import "./Sections.css";
 import Card from "../CardComponents/Card";
 import axios from 'axios';
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import ApiScripts from "../../../scripts/ApiEndpoints";
 import AtividadeDetailsModal from "../../AtividadeDetailsModal/AtividadeDetailsModal";
+import CadastroModal from "../../ModalComponents/CadastroModal";
 /* import plus from '../../../assets/images/plus.svg'; */
 
 axios.defaults.baseURL = "https://capable-dream-production.up.railway.app";
@@ -15,6 +15,7 @@ function Sections() {
   const [listaAtividades, setListaAtividades] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedAtividade, setSelectedAtividade] = useState({});
+  const [isCadastroModalOpen, setIsCadastroModalOpen] = useState(false);
 
   useEffect(() => {
 
@@ -39,24 +40,7 @@ function Sections() {
   },[])
 
   const handleButtonClick = () => {
-    /*const token = localStorage.getItem('token'); // Obtém o token do localStorage
-    const userId = '2'; // Substitua pelo ID do usuário real
-
-    axios.get(`/v1/atividades/${userId}/usuario`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-    .then(response => {
-      console.log(response.data); // Adiciona um console.log para ver o JSON completo da atividade
-      const data = response.data[0]; // Pegando a primeira atividade como exemplo
-      setFormData({
-        title: data.tipo,
-        date: data.data_atividade.join('-'), 
-        status: data.status 
-      });
-    })
-    .catch(error => console.error(error));*/
+    setIsCadastroModalOpen(!isCadastroModalOpen);
   };
 
   return (
@@ -64,7 +48,7 @@ function Sections() {
       <section className="left-section">
         <div className="button-container">
           <span className="activity-text">Enviar nova atividade</span>
-          <button className="new-activity-button" onClick={handleButtonClick}>
+          <button className="new-activity-button" onClick={() => handleButtonClick()}>
             + 
           </button>
         </div>
@@ -88,6 +72,7 @@ function Sections() {
         </div>
       </section>
       <AtividadeDetailsModal isOpen={isModalOpen} setIsModalOpen={setIsModalOpen} atividade={selectedAtividade}/>
+      <CadastroModal setIsCadastroModalOpen={setIsCadastroModalOpen} isCadastroModalOpen={isCadastroModalOpen}/>
     </main>
   );
 }
