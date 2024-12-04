@@ -1,17 +1,20 @@
 import "./Card.css";
 
-function Card({ title, date, status }) {
+function Card(props) {
   return (
     <div className="activity-card">
       <div className="activity-info">
-        <h3>{title}</h3>
-        <div className="activity-date" id="date">{date} </div>
-        <div className="activity-status" id="status">{status}</div>
+        <h3>{props.atividade.tipo}</h3>
+        <div className="activity-date" id="date">{`${props.atividade.data_atividade[2]}/${props.atividade.data_atividade[1]}/${props.atividade.data_atividade[0]}`} </div>
+        <div className="activity-status" id="status">{props.status}</div>
         
       </div>
 
       <div className="activity-button">
-      <button className="see-more-button">Ver Mais</button>
+      <button className="see-more-button"onClick={()=> {
+        props.setSelectedAtividade(props.atividade)
+        props.setIsModalOpen(!props.isModalOpen)
+        }} >Ver Mais</button>
       </div>
     </div>
   );

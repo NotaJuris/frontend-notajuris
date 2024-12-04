@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiScripts from "../../../scripts/ApiEndpoints";
+import AtividadeDetailsModal from "../../AtividadeDetailsModal/AtividadeDetailsModal";
 /* import plus from '../../../assets/images/plus.svg'; */
 
 axios.defaults.baseURL = "https://capable-dream-production.up.railway.app";
@@ -12,6 +13,8 @@ axios.defaults.withCredentials = true;
 function Sections() {
 
   const [listaAtividades, setListaAtividades] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedAtividade, setSelectedAtividade] = useState({});
 
   useEffect(() => {
 
@@ -74,15 +77,17 @@ function Sections() {
             listaAtividades.map((atividade, index) => (
               <Card 
                 index={index}
-                title={atividade.tipo} 
-                date={`${atividade.data_atividade[2]}/${atividade.data_atividade[1]}/${atividade.data_atividade[0]}`} 
-                status={atividade.status} 
+                atividade={atividade}
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                setSelectedAtividade={setSelectedAtividade}
                 
               />
             ))
           }
         </div>
       </section>
+      <AtividadeDetailsModal isOpen={isModalOpen} setIsModalOpen={setIsModalOpen} atividade={selectedAtividade}/>
     </main>
   );
 }
