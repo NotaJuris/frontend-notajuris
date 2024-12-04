@@ -60,7 +60,7 @@ function Sections() {
   };
 
   return (
-    <main className="sections container">
+    <main className="container">
       <section className="left-section">
         <div className="button-container">
           <span className="activity-text">Enviar nova atividade</span>
@@ -71,8 +71,8 @@ function Sections() {
       </section>
 
       <section className="right-section">
+        <h2 style={{ color: "white" }}>Histórico de atividades</h2>
         <div className="card-container">
-          <h2 style={{ color: "white" }}>Histórico de atividades</h2>
           {
             listaAtividades.map((atividade, index) => (
               <Card 
