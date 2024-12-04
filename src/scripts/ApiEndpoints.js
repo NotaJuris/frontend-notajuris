@@ -19,6 +19,19 @@ class ApiScripts {
       .catch((error)=> error)
     }
 
+    getAllUsers(token){
+      return axios.get(
+        '/v1/usuarios',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then( (response) => response.data)
+      .catch( (error) => error);
+    }
+
     getMe(token){
       return axios.get(
         `/v1/usuarios/me`,

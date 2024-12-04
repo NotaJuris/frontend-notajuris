@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useReducer} from "react";
+import React, {useEffect, useState} from "react";
 import CardsTeacherHome from "../components/TeacherComponents/CardsTeacher/CardsTeacherHome";
 import Navbar from "../components/StudentComponents/NavbarComponent/Navbar";
 import "./TeacherScreen.css";
@@ -28,7 +28,6 @@ const TeacherScreen = () => {
           }
         )
         setListaAtividades(listaFiltrada);
-        //forceUpdate();
       } else {
         console.log("listaOriginal: "+listaOriginal)
         setListaAtividades(listaOriginal);
