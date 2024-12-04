@@ -10,8 +10,8 @@
 }
 
 .PanelContainer{
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   text-align: center;
   padding: 40px;
   padding-top: 10px;
@@ -73,9 +73,37 @@
   /* margin-top: 20px; */
 }
 
-.RedirectButton:hover{
-  /* background-color: #ffffff; */
-  color:#132433;  
+.RedirectButton:hover{ 
   cursor: pointer;
 }
 
+/* =================================================================*/
+
+@media (max-width: 768px) {
+  .PanelContainer {
+    max-width: 100%; /* Ocupa toda a largura em dispositivos móveis */
+    max-height: auto;  
+    overflow:auto;  
+    margin: 10px;   
+    border-radius: 30px;          /* Ajusta altura ao conteúdo */
+    
+  }
+
+  .PanelElements {
+    flex-direction: column; 
+    gap: 15px; 
+  }
+
+  .ButtonContainer {
+    width: 100%; 
+  }
+
+  .ButtonImage {
+    max-width: 50%; 
+    height: auto;
+  }
+
+  .RedirectButton {
+    width: 100%; 
+  }
+}
