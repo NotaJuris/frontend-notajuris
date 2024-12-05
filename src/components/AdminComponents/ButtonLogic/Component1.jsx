@@ -2,7 +2,7 @@ import './Content.css';
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-function Comp1() {
+function Comp1(props) {
   const [showEnviadas, setShowEnviadas] = useState(false);
   const [showRejeitadas, setShowRejeitadas] = useState(false);
   const [showDevolvidas, setShowDevolvidas] = useState(false);
@@ -11,20 +11,43 @@ function Comp1() {
   const toggleRejeitadas = () => setShowRejeitadas(!showRejeitadas);
   const toggleDevolvidas = () => setShowDevolvidas(!showDevolvidas);
 
-  const atividadesEnviadas = [
-    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 10 },
-    { id: 2, nome: 'Prática Jurídica Real', quantidade: 5 },
-  ];
+  const getFilteredAtividades = (filterType) => {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth(); // 0-indexado (0 = Janeiro)
+    const currentYear = currentDate.getFullYear();
 
-  const atividadesRejeitadas = [
-    { id: 1, nome: 'Pratica Jurídica Simulada', quantidade: 2 },
-    { id: 2, nome: 'Prática Jurídica Real', quantidade: 1 },
-  ];
+    switch (filterType) {
+      case 0: // Mensal
+        return props.atividades.filter(
+          (atividade) =>
+            atividade.data_atividade[0] === currentYear &&
+            atividade.data_atividade[1] === currentMonth
+        );
+      case 1: // Semestral
+        const currentSemester = Math.floor(currentMonth / 6); // 0 = Jan-Jun, 1 = Jul-Dez
+        return props.atividades.filter(
+          (atividade) =>
+            atividade.data_atividade[0] === currentYear &&
+            Math.floor(atividade.data_atividade[1] / 6) === currentSemester
+        );
+      case 2: // Total (todos os anos)
+        return props.atividades;
+      default:
+        return [];
+    }
+  };
 
-  const atividadesDevolvidas = [
-    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 3 },
-    { id: 2, nome: 'Praática Jurídica Real', quantidade: 4 },
-  ];
+  const atividadesFiltradas = getFilteredAtividades(props.indexButton)
+
+  const atividadesEnviadas = atividadesFiltradas.filter(
+    (atividade) => atividade.status === 'ACEITO'
+  );
+  const atividadesRejeitadas = atividadesFiltradas.filter(
+    (atividade) => atividade.status === 'REJEITADO'
+  );
+  const atividadesDevolvidas = atividadesFiltradas.filter(
+    (atividade) => atividade.status === 'REENVIO'
+  );
 
   return (
     <div className='content-button'>
@@ -39,11 +62,11 @@ function Comp1() {
         </p>
         {showEnviadas && (
           <ul>
-            {atividadesEnviadas.map(atividade => (
-              <li key={atividade.id}>
+            {atividadesEnviadas.map((atividade, index) => (
+              <li index={index}>
                 <div className='atividade-item'>
-                  <span>{atividade.nome}</span>
-                  <span>{atividade.quantidade}</span>
+                  <span>{atividade.tipo}</span>
+                  {/*<span>{atividade.quantidade}</span>*/}
                 </div>
               </li>
             ))}
@@ -60,11 +83,11 @@ function Comp1() {
         </p>
         {showRejeitadas && (
           <ul>
-            {atividadesRejeitadas.map(atividade => (
-              <li key={atividade.id}>
+            {atividadesRejeitadas.map((atividade, index) => (
+              <li index={index}>
                 <div className='atividade-item'>
-                  <span>{atividade.nome}</span>
-                  <span>{atividade.quantidade}</span>
+                  <span>{atividade.tipo}</span>
+                  {/*<span>{atividade.quantidade}</span>*/}
                 </div>
               </li>
             ))}
@@ -81,11 +104,11 @@ function Comp1() {
         </p>
         {showDevolvidas && (
           <ul>
-            {atividadesDevolvidas.map(atividade => (
-              <li key={atividade.id}>
+            {atividadesDevolvidas.map((atividade, index) => (
+              <li index={index}>
                 <div className='atividade-item'>
-                  <span>{atividade.nome}</span>
-                  <span>{atividade.quantidade}</span>
+                  <span>{atividade.tipo}</span>
+                  {/*<span>{atividade.quantidade}</span>*/}
                 </div>
               </li>
             ))}

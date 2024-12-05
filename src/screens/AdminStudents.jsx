@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEye, FaEyeSlash, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import './AdminStudents.css';
 import Navbar from '../components/StudentComponents/NavbarComponent/Navbar';
 import ApiScripts from '../scripts/ApiEndpoints';

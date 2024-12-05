@@ -1,14 +1,10 @@
 import React from 'react';
+import Component from "./Component1";
 
-const RenderComponent = ({ index, components }) => {
-  const Component = components[index];
-  return Component ? <Component /> : null;
-};
-
-const ReportContent = ({ index, components }) => {
+function ReportContent(props){
   return (
     <div className="report-content">
-      <RenderComponent index={index} components={components} />
+      <Component atividades={props.atividades} indexButton={props.indexButton}/>
     </div>
   );
 };

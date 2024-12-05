@@ -2,7 +2,7 @@ import './Content.css';
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
-function Comp2() {
+function Comp2(atividades) {
   const [showEnviadas, setShowEnviadas] = useState(false);
   const [showRejeitadas, setShowRejeitadas] = useState(false);
   const [showDevolvidas, setShowDevolvidas] = useState(false);
@@ -11,20 +11,17 @@ function Comp2() {
   const toggleRejeitadas = () => setShowRejeitadas(!showRejeitadas);
   const toggleDevolvidas = () => setShowDevolvidas(!showDevolvidas);
 
-  const atividadesEnviadas = [
-    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 60 },
-    { id: 2, nome: 'Prática Jurídica Real', quantidade: 48 },
-  ];
+  const atividadesEnviadas = atividades.filter(
+    (atividade) => atividade.status === "ACEITO"
+  );
 
-  const atividadesRejeitadas = [
-    { id: 1, nome: 'Pratica Jurídica Simulada', quantidade: 12 },
-    { id: 2, nome: 'Prática Jurídica Real', quantidade: 6 },
-  ];
+  const atividadesRejeitadas = atividades.filter(
+    (atividade) => atividade.status === "REJEITADO"
+  );
 
-  const atividadesDevolvidas = [
-    { id: 1, nome: 'Prática Jurídica Simulada', quantidade: 18 },
-    { id: 2, nome: 'Praática Jurídica Real', quantidade: 24 },
-  ];
+  const atividadesDevolvidas = atividades.filter(
+    (atividade) => atividade.status === "REENVIO"
+  );
 
   return (
     <div className='content-button'>
