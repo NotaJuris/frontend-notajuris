@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useReducer} from "react";
+import React, {useEffect, useState} from "react";
 import CardsTeacherHome from "../components/TeacherComponents/CardsTeacher/CardsTeacherHome";
 import Navbar from "../components/StudentComponents/NavbarComponent/Navbar";
 import "./TeacherScreen.css";
@@ -65,6 +65,7 @@ const TeacherScreen = () => {
   return (
     <>
       <Navbar name={currentUser.nome}/>
+      {/*<NavbarTeacher/>*/}
       <div className="teacher-screen">
         <div className="teacher-dashboard">
           <div className="content-teacher-dashboard">

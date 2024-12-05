@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiClipboardDocumentList, HiUserGroup, HiArrowLeftOnRectangle } from "react-icons/hi2";
-import logo_neojurix from '../../../assets/images/logo_neojurix.svg';
+import logoNeoJurix from '../../../assets/images/logoNeoJurix.png';
 import { Link } from 'react-router-dom';
 import './NavbarTeacher.css';
 
@@ -8,8 +8,8 @@ const NavbarTeacher = () => {
     return (
         <nav className="navbar_teacher">
             <div className="navbar_teacher-left">
-                <img src={logo_neojurix} alt="NotaJuris Logo" className="navbar-logo" />
-                <h2>NotaJuris</h2>
+                <img src={logoNeoJurix} alt="Logo NeoJurix" />
+                <h2>NeoJurix</h2>
             </div>
 
             <div className="navbar_teacher-right">
