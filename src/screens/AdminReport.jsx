@@ -1,20 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AdminReport.css';
 import ButtonLogic from "../components/AdminComponents/ButtonLogic/ButtonLogic";
 import ReportContent from "../components/AdminComponents/ButtonLogic/ReportContent";
-import Comp1 from "../components/AdminComponents/ButtonLogic/Component1";
-import Comp2 from "../components/AdminComponents/ButtonLogic/Component2";
-import Comp3 from "../components/AdminComponents/ButtonLogic/Component3";
 import Navbar from '../components/StudentComponents/NavbarComponent/Navbar';
+import ApiScripts from '../scripts/ApiEndpoints'
 
 const AdminReport = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const components = [Comp1, Comp2, Comp3];
     const buttons = ["Mensal", "Semestral", "Total"];
+    const [listaAtividades, setListaAtividades] = useState([]);
+
+    useEffect(()=>{
+        console.log("entrou useEffect()")
+
+        const apiScripts = new ApiScripts();
+
+        async function fetchData(){
+            const token = localStorage.getItem("currentUserToken");
+
+            const atividades = await apiScripts.getAllAtividades(token);
+            console.log("atividades queriada: "+atividades)
+            setListaAtividades(atividades);
+            
+        }
+
+        fetchData();
+
+    },[]);
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
     return (
         <>
-            <Navbar name="Lucas"/>
+            <Navbar name={currentUser.nome}/>
             <div className='report-screen'>
                 <div className='adm-navbar'>
                     {/* <NavbarAdm /> */}
@@ -28,7 +46,7 @@ const AdminReport = () => {
                     </div>
                     <hr className='divider-report' />
                     <div className='adm-report-content'>
-                        <ReportContent index={selectedIndex} components={components} />
+                        <ReportContent indexButton={selectedIndex} atividades={listaAtividades}/>
                     </div>
                 </div>
             </div>

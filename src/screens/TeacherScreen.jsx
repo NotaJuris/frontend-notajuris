@@ -28,7 +28,6 @@ const TeacherScreen = () => {
           }
         )
         setListaAtividades(listaFiltrada);
-        //forceUpdate();
       } else {
         console.log("listaOriginal: "+listaOriginal)
         setListaAtividades(listaOriginal);

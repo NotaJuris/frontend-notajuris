@@ -4,18 +4,12 @@ import "./AdminPanel.css";
 import AdminOption1 from '../assets/images/admin-option-1.jpeg';
 import AdminOption2 from '../assets/images/admin-option-2.jpeg';
 import AdminOption3 from '../assets/images/admin-option-3.jpeg';
+import { useNavigate } from "react-router-dom";
 
 
 function AdminPanel() {
-  // useEffect(() => {
-  //   // Adiciona a classe ao body
-  //   document.body.classList.add("admin-body");
 
-  //   // Remove a classe ao desmontar o componente
-  //   return () => {
-  //     document.body.classList.remove("admin-body");
-  //   };
-  // }, []);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -30,7 +24,11 @@ function AdminPanel() {
               <img src={AdminOption1} alt="" className="ButtonImage" />
               <button
                 className="RedirectButton"
-                onclick="window.location.href='https://www.example.com'"
+                onClick={
+                  () => {
+                    navigate("/UserRegister")
+                  }
+                }
               >
                 Cadastrar Usuário
               </button>
@@ -40,7 +38,11 @@ function AdminPanel() {
               <img src={AdminOption2} alt="" className="ButtonImage" />
               <button
                 className="RedirectButton"
-                onclick="window.location.href='https://www.example.com'"
+                onClick={
+                  () => {
+                    navigate("/AdminStudents")
+                  }
+                }
               >
                 Ver Alunos
               </button>
@@ -50,7 +52,11 @@ function AdminPanel() {
               <img src={AdminOption3} alt="" className="ButtonImage" />
               <button
                 className="RedirectButton"
-                onclick="window.location.href='https://www.example.com'"
+                onClick={
+                  () => {
+                    navigate("/AdminReport")
+                  }
+                }
               >
                 Verificar Relatório
               </button>

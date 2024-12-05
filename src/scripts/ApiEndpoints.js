@@ -19,6 +19,19 @@ class ApiScripts {
       .catch((error)=> error)
     }
 
+    getAllUsers(token){
+      return axios.get(
+        '/v1/usuarios',
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then( (response) => response.data)
+      .catch( (error) => error);
+    }
+
     getMe(token){
       return axios.get(
         `/v1/usuarios/me`,
@@ -83,6 +96,16 @@ class ApiScripts {
         }
       })
       .then( response => response.data)
+      .catch(error => {throw error})
+    }
+
+    postUsuario(token, body){
+      return axios.post(`/v1/usuarios`, body, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.data)
       .catch(error => {throw error})
     }
 
