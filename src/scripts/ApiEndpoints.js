@@ -99,6 +99,16 @@ class ApiScripts {
       .catch(error => {throw error})
     }
 
+    postUsuario(token, body){
+      return axios.post(`/v1/usuarios`, body, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.data)
+      .catch(error => {throw error})
+    }
+
 
   }
 
