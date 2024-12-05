@@ -14,6 +14,7 @@
 
   .Navbar .NavbarRight{
     font-size: 12px;
+    ;
   }
 
   .Navbar .NotificationBell{
@@ -32,16 +33,20 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: #fff;
+  background-color: #213f5a;
   top: 60px;
   right: 50px;
   border-radius: 20px;
   padding: 15px;
   width: 200px;
+  gap:10px;
+  border: 1px solid #262626;
+  
 }
 
 .cardNotification{
   color:black;
+  background-color: #fff;
   font-size: 12px;
   border-width: 2px;
   border-color: #000;
@@ -67,6 +72,7 @@ h3{
   flex-direction: row;
   align-items: center;
   margin-right: 10px;
+  
 
 }
 
@@ -101,6 +107,8 @@ h3{
   display: flex;
   flex-direction: row;
   font-size: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .NavbarLogo {

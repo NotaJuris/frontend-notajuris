@@ -65,8 +65,8 @@ function Navbar(props) {
               {
                   notifications.map( n => (
                     <div className="cardNotification">
-                      <div className="cardNotificationTitle">n.titlo</div>
-                      <div>n.mensagem</div>
+                      <div className="cardNotificationTitle">{n.titlo}</div>
+                      <div>{n.mensagem}</div>
                     </div>)
                   )
               }

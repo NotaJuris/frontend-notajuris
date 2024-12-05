@@ -65,7 +65,7 @@ function CadastroModal(props) {
         <form onSubmit={handleSubmit}>
           <label>
             Tipo:
-            <select name="tipo" value={tipo} onChange={(e)=> setTipo(e.target.value)}>
+            <select name="tipo" value={tipo} onChange={(e)=> setTipo(e.target.value)} className="select-type">
               <option value="AUDIENCIA">AUDIENCIA</option>
               <option value="PLANTAO">PLANTAO</option>
               <option value="ATENDIMENTO">ATENDIMENTO</option>
@@ -170,7 +170,7 @@ function CadastroModal(props) {
             </>)
           }
           
-          <button type="submit">Enviar</button>
+          <button type="submit" className="modal-submit">Enviar</button>
         </form>
       </div>
     </div>
